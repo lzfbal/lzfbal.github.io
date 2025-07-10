@@ -9,6 +9,34 @@ defineProps({
 </script>
 
 <template>
+  <div class="article-wrapper">
+    <div
+      v-for="(article, index) in items"
+      :key="index"
+      class="article"
+      @click="$router.push(article.info.path)"
+    >
+      <h2 class="title">
+        {{ article.info.title }}
+      </h2>
+      
+      <div class="article-info">
+        <span v-if="article.info.date">
+          {{ article.info.date }}
+        </span>
+        <span v-if="article.info.category">
+          {{ article.info.category }}
+        </span>
+        <span v-if="article.info.tags">
+          {{ article.info.tags.join(', ') }}
+        </span>
+      </div>
+
+      <div class="excerpt" v-if="!isTimeline && article.info.excerpt">
+        {{ article.info.excerpt }}
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -23,15 +51,17 @@ defineProps({
 }
 
 .article {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0 auto 1.25rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 0.4rem;
-  color: var(--vp-c-text);
-  text-align: start;
+  & {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 1.25rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--vp-c-border);
+    border-radius: 0.4rem;
+    color: var(--vp-c-text);
+    text-align: start;
+  }
 
   @media (max-width: 419px) {
     border-radius: 0;
