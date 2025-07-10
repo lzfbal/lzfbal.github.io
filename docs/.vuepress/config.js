@@ -6,11 +6,11 @@ import { webpackBundler } from '@vuepress/bundler-webpack'
 export default defineUserConfig({
   lang: 'en-US',
 
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  title: "Joey Li's Blog",
+  description: 'Blog about some works and life of Joey Li',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: 'images/avatar.jpg',
 
     navbar: [
       '/',
