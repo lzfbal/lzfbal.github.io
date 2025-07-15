@@ -1,1 +1,34 @@
-**/.temp/
+# Dependencies
+node_modules/
+**/node_modules/
+
+# VuePress Cache and Dist
+.temp/
+.cache/
+dist/
+
+# Build files
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/dist/
+
+# Node modules in any subdirectory
+**/node_modules
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE / Editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
