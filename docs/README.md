@@ -3,19 +3,20 @@ pageLayout: home
 externalLinkIcon: false
 config:
   -
-    type: hero
+    type: 'banner'
     full: true
     background: tint-plate
+    banner: "/images/banner.jpg"
+    bannerMask:
+      light: 0.1
+      dark: 0.3
     hero:
-      name: Theme Plume
-      tagline: VuePress Next Theme
-      text: A simple, feature-rich, document & blog
+      name: Joey Li
+      tagline: Go to the future.
+      text: A blog for my life and tech.
       actions:
         -
           theme: brand
           text: Blog
           link: /blog/
-        -
-          theme: alt
-          text: Github
 ---

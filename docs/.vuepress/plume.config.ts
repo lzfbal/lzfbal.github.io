@@ -25,8 +25,8 @@ export default defineThemeConfig({
   social: [
     { icon: 'github', link: '/' },
   ],
-  // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
-  // aside: true, // 页内侧边栏， 默认显示在右侧
+  navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
+  aside: true, // 页内侧边栏， 默认显示在右侧
   // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
 
   /**
@@ -49,12 +49,12 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
-    name: 'Joey&#x27;s Blog',
+    avatar: '/images/avatar.jpg',
+    name: "Joey Li",
     description: 'Life and Tech',
-    // circle: true,
-    // location: '',
-    // organization: '',
+    circle: true,
+    location: 'Dalian City, China',
+    organization: 'Zhejiang University',
   },
 
   navbar,
@@ -72,10 +72,10 @@ export default defineThemeConfig({
   // },
 
   /* 过渡动画 @see https://theme-plume.vuejs.press/config/basic/#transition */
-  // transition: {
-  //   page: true,        // 启用 页面间跳转过渡动画
-  //   postList: true,    // 启用 博客文章列表过渡动画
-  //   appearance: 'fade',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
-  // },
+  transition: {
+    page: true,        // 启用 页面间跳转过渡动画
+    postList: true,    // 启用 博客文章列表过渡动画
+    appearance: 'fade',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
+  },
 
 })

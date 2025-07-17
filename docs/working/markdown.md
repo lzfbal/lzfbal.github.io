@@ -4,6 +4,7 @@ tags:
   - markdown
 createTime: 2025/07/15 15:59:39
 permalink: /article/l295dais/
+draft: true
 ---
 
 ## Heading 2
@@ -68,20 +69,20 @@ content right
 
 [outside links](https://github.com/pengzhanbo)
 
-**Badge：**
+**Badgeï¼**
 
 - <Badge type="info" text="info badge" />
 - <Badge type="tip" text="tip badge" />
 - <Badge type="warning" text="warning badge" />
 - <Badge type="danger" text="danger badge" />
 
-**icons：**
+**iconsï¼**
 
 - home - <Icon name="material-symbols:home" color="currentColor" size="1em" />
 - vscode - <Icon name="skill-icons:vscode-dark" size="2em" />
 - twitter - <Icon name="skill-icons:twitter" size="2em" />
 
-**demo wrapper：**
+**demo wrapperï¼**
 
 ::: demo-wrapper title="Demo" no-padding height="200px"
 <style scoped>
@@ -102,7 +103,7 @@ content right
 
 :::
 
-**code block：**
+**code blockï¼**
 
 ```js whitespace
 const a = 1
@@ -123,7 +124,7 @@ const obj = {
 }
 ```
 
-**code groups：**
+**code groupsï¼**
 
 ::: code-tabs
 @tab tab1
@@ -144,7 +145,7 @@ const c: number = a + b
 
 :::
 
-**code highlight：**
+**code highlightï¼**
 
 ```ts
 function foo() {
@@ -160,7 +161,7 @@ function foo() {
 }
 ```
 
-**code focus：**
+**code focusï¼**
 
 ```ts
 function foo() {
@@ -234,7 +235,7 @@ const c = a + b
 
 :::
 
-**GFM alert：**
+**GFM alertï¼**
 
 > [!note]
 > note
@@ -287,7 +288,7 @@ app.appendChild(window.document.createElement('small')).textContent = a
 :::
 ::::
 
-**tab card：**
+**tab cardï¼**
 
 ::: tabs
 @tab title 1
@@ -307,15 +308,15 @@ content block
 :::
 ::::
 
-**footnote：**
+**footnoteï¼**
 
-footnote 1 link[^first]。
+footnote 1 link[^first]ã
 
-footnote 2 link[^second]。
+footnote 2 link[^second]ã
 
-inline footnote ^[^first] definition。
+inline footnote ^[^first] definitionã
 
-Repeated footnote definition[^second]。
+Repeated footnote definition[^second]ã
 
 [^first]: footnote **you can contain special mark**
 
