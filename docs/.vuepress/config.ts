@@ -38,8 +38,8 @@ export default defineUserConfig({
 
     /* 页内信息 */
     // editLink: true,
-    // lastUpdated: true,
-    // contributors: true,
+    lastUpdated: false,
+    contributors: false,
     // changelog: false,
 
     /**

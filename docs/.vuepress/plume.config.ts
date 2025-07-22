@@ -52,7 +52,7 @@ export default defineThemeConfig({
     avatar: '/images/avatar.jpg',
     name: "Joey Li",
     description: 'Life and Tech',
-    circle: true,
+    circle: false,
     location: 'Dalian City, China',
     organization: 'Zhejiang University',
   },
