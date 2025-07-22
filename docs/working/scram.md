@@ -1,7 +1,7 @@
 ---
 title: SCRAM
 createTime: 2025/07/22 14:56:24
-permalink: /article/k5kh9q8h/
+permalink: /article/k5kh9q8g/
 tags:
   - SCRAM
 ---
@@ -56,21 +56,21 @@ Field|Dscription
 
 - Client calculates SaltedPassword using received salt and iteration-count
 
-    $\color{#C3B1E1}{SaltedPassword} \color{white}= PBKDF2(password, salt, iteration\text{-}count)$
+    $\color{#C3B1E1}{SaltedPassword} \color{inherit}= PBKDF2(password, salt, iteration\text{-}count)$
 
-    $\color{#B8CC44}{ClientKey} \color{white} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{white}, "Client\ Key")$
+    $\color{#B8CC44}{ClientKey} \color{inherit} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{inherit}, "Client\ Key")$
 
-    $\color{#EE6666}{StoredKey}\color{white} = Hash(\color{#B8CC44}{ClientKey}\color{white})$
+    $\color{#EE6666}{StoredKey}\color{inherit} = Hash(\color{#B8CC44}{ClientKey}\color{inherit})$
 
 - Calculates ClientSignature and ClientProof
 
-    $\color{orange}{ClientSignature}\color{white} = HMAC(\color{#EE6666}{StoredKey}\color{white}, \color{green}{AuthMessage}\color{white})$
+    $\color{orange}{ClientSignature}\color{inherit} = HMAC(\color{#EE6666}{StoredKey}\color{inherit}, \color{green}{AuthMessage}\color{inherit})$
 
-    $\color{#935116}{ClientProof}\color{white} = \color{#B8CC44}{ClientKey} \ \ \color{white} XOR \ \ \color{orange}{ClientSignature}$
+    $\color{#935116}{ClientProof}\color{inherit} = \color{#B8CC44}{ClientKey} \ \ \color{inherit} XOR \ \ \color{orange}{ClientSignature}$
 
     Where 
 
-    $\color{green}{AuthMessage}\color{white} = client\text{-}first\text{-}bare+","+server\text{-}first\text{-}message+","+client\text{-}final\text{-}without\text{-}proof$
+    $\color{green}{AuthMessage}\color{inherit} = client\text{-}first\text{-}bare+","+server\text{-}first\text{-}message+","+client\text{-}final\text{-}without\text{-}proof$
 
 | Field | Description 
 |-------|-------------
@@ -85,37 +85,37 @@ Field|Dscription
 
     The server first repeats the client's calculation process using stored user information:
 
-    $\color{#C3B1E1}{SaltedPassword}\color{white} = PBKDF2(password, salt, iteration\text{-}count)$
+    $\color{#C3B1E1}{SaltedPassword}\color{inherit} = PBKDF2(password, salt, iteration\text{-}count)$
 
-    $\color{#B8CC44}{ClientKey}\color{white} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{white}, "Client\ Key")$
+    $\color{#B8CC44}{ClientKey}\color{inherit} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{inherit}, "Client\ Key")$
 
-    $\color{#EE6666}{StoredKey}\color{white} = Hash(\color{#B8CC44}{ClientKey}\color{white})$
+    $\color{#EE6666}{StoredKey}\color{inherit} = Hash(\color{#B8CC44}{ClientKey}\color{inherit})$
 
     Then the server calculates ClientSignature:
 
-    $\color{orange}{ClientSignature}\color{white} = HMAC(\color{#EE6666}{StoredKey}\color{white}, \color{green}{AuthMessage}\color{white})$
+    $\color{orange}{ClientSignature}\color{inherit} = HMAC(\color{#EE6666}{StoredKey}\color{inherit}, \color{green}{AuthMessage}\color{inherit})$
 
     Recover ClientKey using received ClientProof:
 
-    $\color{#B8CC44}{ClientKey}\color{white} = \color{#935116}{ClientProof} \ \color{white} XOR \ \ \color{orange}{ClientSignature}$
+    $\color{#B8CC44}{ClientKey}\color{inherit} = \color{#935116}{ClientProof} \ \color{inherit} XOR \ \ \color{orange}{ClientSignature}$
 
-    IF    $\color{#EE6666}{StoredKey}\color{white} == Hash(\color{#B8CC44}{ClientKey}\color{white})$ THEN SUCESS.
+    IF    $\color{#EE6666}{StoredKey}\color{inherit} == Hash(\color{#B8CC44}{ClientKey}\color{inherit})$ THEN SUCESS.
 - Calculates ServerKey and ServerSignature
 
-    $\color{cyan}{ServerKey}\color{white} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{white}, "Server\ Key")$
+    $\color{cyan}{ServerKey}\color{inherit} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{inherit}, "Server\ Key")$
 
-    $\color{#DD6F3D}ServerSignature\color{white} = HMAC(\color{cyan}{ServerKey}\color{white}, \color{green}{AuthMessage}\color{white})$
+    $\color{#DD6F3D}ServerSignature\color{inherit} = HMAC(\color{cyan}{ServerKey}\color{inherit}, \color{green}{AuthMessage}\color{inherit})$
 
 | Field | Description 
 |-------|-------------
 | verifier | Server signature 
 
 ### 5. Client verify server signature
-$\color{#C3B1E1}{SaltedPassword}\color{white} = PBKDF2(password, salt, iteration\text{-}count)$
+$\color{#C3B1E1}{SaltedPassword}\color{inherit} = PBKDF2(password, salt, iteration\text{-}count)$
 
-$\color{cyan}{ServerKey}\color{white} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{white}, "Server\ Key")$
+$\color{cyan}{ServerKey}\color{inherit} = HMAC(\color{#C3B1E1}{SaltedPassword}\color{inherit}, "Server\ Key")$
 
-$\color{#DD6F3D}{ExpectedServerSignature}\color{white} = HMAC(\color{cyan}{ServerKey}\color{white}, \color{green}{AuthMessage}\color{white})$
+$\color{#DD6F3D}{ExpectedServerSignature}\color{inherit} = HMAC(\color{cyan}{ServerKey}\color{inherit}, \color{green}{AuthMessage}\color{inherit})$
 
 IF
  $\color{#DD6F3D}{ServerSignature} == ExpectedServerSignature$
